@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/1_2_passvariable" />
             <option value="$PROJECT_DIR$/1_3_senddata" />
             <option value="$PROJECT_DIR$/1_5_lifecycles" />
+            <option value="$PROJECT_DIR$/1_6_slideanimation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
