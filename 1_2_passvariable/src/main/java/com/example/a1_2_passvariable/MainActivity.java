@@ -34,8 +34,11 @@ public class MainActivity extends AppCompatActivity {
         String text = edittext1.getText().toString();
 
         EditText edittext2 = (EditText)findViewById(R.id.edittext2);
-        int number = Integer.parseInt(edittext2.getText().toString());
-
+        int number = 0;
+        if(!edittext2.getText().toString().isEmpty()){
+           number = Integer.parseInt(edittext2.getText().toString());
+        }
+        
         Intent intent = new Intent(this, SubActivity.class);
         intent.putExtra(EXTRA_TEXT, text);
         intent.putExtra(EXTRA_NUMBER, number);
