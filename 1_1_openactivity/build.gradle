@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.a1_1_openactivityapp"
+        applicationId "com.example.a1_1_openactivity"
         minSdkVersion 27
         targetSdkVersion 29
         versionCode 1

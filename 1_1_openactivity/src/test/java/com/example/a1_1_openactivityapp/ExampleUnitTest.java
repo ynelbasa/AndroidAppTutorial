@@ -1,4 +1,4 @@
-package com.example.a1_1_openactivityapp;
+package com.example.a1_1_openactivity;
 
 import org.junit.Test;
 

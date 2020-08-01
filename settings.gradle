@@ -1,4 +1,4 @@
 include ':1_3_senddata'
 include ':1_2_passvariable'
-include ':1_1_openactivityapp'
+include ':1_1_openactivity'
 rootProject.name = "AndroidApp"
