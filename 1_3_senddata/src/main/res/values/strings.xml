@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">1_3_senddata</string>
+    <string name="app_name">Send data</string>
+    <string name="open_sub_activity">Open Sub Activity</string>
 </resources>

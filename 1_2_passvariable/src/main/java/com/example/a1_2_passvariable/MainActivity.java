@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         if(!edittext2.getText().toString().isEmpty()){
            number = Integer.parseInt(edittext2.getText().toString());
         }
-        
+
         Intent intent = new Intent(this, SubActivity.class);
         intent.putExtra(EXTRA_TEXT, text);
         intent.putExtra(EXTRA_NUMBER, number);
