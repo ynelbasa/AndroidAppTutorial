@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/1_1_openactivity" />
             <option value="$PROJECT_DIR$/1_2_passvariable" />
             <option value="$PROJECT_DIR$/1_3_senddata" />
+            <option value="$PROJECT_DIR$/1_5_lifecycles" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
