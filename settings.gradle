@@ -1,4 +1,9 @@
+include ':1_9_startingactivity'
+include ':1_8_slidrlib'
+include ':1_7_intentanimation'
+include ':1_6_slideanimation'
+include ':1_5_lifecycles'
+include ':1_3_senddata'
 include ':1_2_passvariable'
-include ':1_1_openactivityapp'
-include ':app'
+include ':1_1_openactivity'
 rootProject.name = "AndroidApp"
