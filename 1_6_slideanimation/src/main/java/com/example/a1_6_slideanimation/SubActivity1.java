@@ -28,4 +28,10 @@ public class SubActivity1 extends AppCompatActivity {
         Intent intent = new Intent(this, SubActivity2.class);
         startActivity(intent);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }
