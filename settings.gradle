@@ -1,3 +1,4 @@
+include ':1_7_intentanimation'
 include ':1_6_slideanimation'
 include ':1_5_lifecycles'
 include ':1_3_senddata'

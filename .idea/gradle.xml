@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/1_3_senddata" />
             <option value="$PROJECT_DIR$/1_5_lifecycles" />
             <option value="$PROJECT_DIR$/1_6_slideanimation" />
+            <option value="$PROJECT_DIR$/1_7_intentanimation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
