@@ -7,27 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class SubActivity1 extends AppCompatActivity {
 
-    // Declare UI Elements
+    //Declare UI elements
     private Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        button = findViewById(R.id.buttonSub1);
-        button.setOnClickListener(new View.OnClickListener(){
+        setContentView(R.layout.activity_sub1);
+        button = findViewById(R.id.buttonSub2);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openSubActivity1();
+                openSubActivity2();
             }
         });
     }
 
-    public void openSubActivity1() {
-        Intent intent = new Intent(this, SubActivity1.class);
+    public void openSubActivity2() {
+        Intent intent = new Intent(this, SubActivity2.class);
         startActivity(intent);
     }
 }

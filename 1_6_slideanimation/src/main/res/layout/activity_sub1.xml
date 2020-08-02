@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SubActivity1">
 
     <TextView
-        android:id="@+id/textViewTitle"
+        android:id="@+id/textViewTitleSubActivity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Activity"
+        android:text="Sub Activity 1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/buttonSub1"
+        android:id="@+id/buttonSub2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textViewTitle"
-        android:text="Go to Sub Activity 1"/>
+        android:layout_below="@+id/textViewTitleSubActivity1"
+        android:text="Go to Sub Activity 2"/>
 
 </RelativeLayout>
