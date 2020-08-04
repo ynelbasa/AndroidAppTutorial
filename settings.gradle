@@ -1,3 +1,4 @@
+include ':2_1_layoutresource'
 include ':1_9_startingactivity'
 include ':1_8_slidrlib'
 include ':1_7_intentanimation'

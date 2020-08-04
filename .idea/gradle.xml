@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/1_7_intentanimation" />
             <option value="$PROJECT_DIR$/1_8_slidrlib" />
             <option value="$PROJECT_DIR$/1_9_startingactivity" />
+            <option value="$PROJECT_DIR$/2_1_layoutresource" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
