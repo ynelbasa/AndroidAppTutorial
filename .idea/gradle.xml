@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/1_9_startingactivity" />
             <option value="$PROJECT_DIR$/2_1_layoutresource" />
             <option value="$PROJECT_DIR$/2_2_removeactionbar" />
+            <option value="$PROJECT_DIR$/2_3_includemerge" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
