@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/2_3_includemerge" />
             <option value="$PROJECT_DIR$/2_4_constraints" />
             <option value="$PROJECT_DIR$/2_5_matchconstraintratiobaseline" />
+            <option value="$PROJECT_DIR$/2_6_gonemarginchainsguidelines" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
