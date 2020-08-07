@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/4_1_optionmenu" />
             <option value="$PROJECT_DIR$/4_2_popup" />
             <option value="$PROJECT_DIR$/4_3_contextmenu" />
+            <option value="$PROJECT_DIR$/4_4_contextualactionmenu" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
