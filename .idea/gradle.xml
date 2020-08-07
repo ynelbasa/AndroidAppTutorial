@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/2_5_matchconstraintratiobaseline" />
             <option value="$PROJECT_DIR$/2_6_gonemarginchainsguidelines" />
             <option value="$PROJECT_DIR$/3_tictactoe" />
+            <option value="$PROJECT_DIR$/4_1_optionmenu" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
