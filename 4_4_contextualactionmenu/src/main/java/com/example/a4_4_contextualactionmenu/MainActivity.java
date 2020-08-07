@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onDestroyActionMode(ActionMode mode) {
+            // Close action mode
             mActionMode = null;
         }
     };
