@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/2_1_layoutresource" />
             <option value="$PROJECT_DIR$/2_2_removeactionbar" />
             <option value="$PROJECT_DIR$/2_3_includemerge" />
+            <option value="$PROJECT_DIR$/2_4_constraints" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
