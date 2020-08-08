@@ -1,3 +1,4 @@
+include ':2_7_barriersandgroups'
 include ':4_6_navigationdrawer'
 include ':4_5_bottomnavigationview'
 include ':4_4_contextualactionmenu'
