@@ -1,3 +1,7 @@
+include ':6_4_toastposition'
+include ':6_3_toasty'
+include ':6_2_stylabletoast'
+include ':6_1_customtoast'
 include ':5_3_gson'
 include ':5_2_internalstorage'
 include ':5_1_sharedpreferences'

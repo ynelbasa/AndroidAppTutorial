@@ -38,6 +38,10 @@
             <option value="$PROJECT_DIR$/5_1_sharedpreferences" />
             <option value="$PROJECT_DIR$/5_2_internalstorage" />
             <option value="$PROJECT_DIR$/5_3_gson" />
+            <option value="$PROJECT_DIR$/6_1_customtoast" />
+            <option value="$PROJECT_DIR$/6_2_stylabletoast" />
+            <option value="$PROJECT_DIR$/6_3_toasty" />
+            <option value="$PROJECT_DIR$/6_4_toastposition" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

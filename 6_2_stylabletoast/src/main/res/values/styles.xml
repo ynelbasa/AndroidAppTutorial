@@ -1,0 +1,19 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="exampleToast">
+        <item name="stColorBackground">#94ffab</item>
+        <item name="stTextColor">#000</item>
+        <item name="stIconStart">@drawable/ic_toast</item>
+        <item name="stStrokeColor">#000</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stLength">LONG</item>
+        <item name="stRadius">3dp</item>
+    </style>
+</resources>
