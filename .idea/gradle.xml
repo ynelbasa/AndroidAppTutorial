@@ -37,6 +37,7 @@
             <option value="$PROJECT_DIR$/4_6_navigationdrawer" />
             <option value="$PROJECT_DIR$/5_1_sharedpreferences" />
             <option value="$PROJECT_DIR$/5_2_internalstorage" />
+            <option value="$PROJECT_DIR$/5_3_gson" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
