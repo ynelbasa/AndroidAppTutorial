@@ -1,3 +1,6 @@
+include ':5_3_gson'
+include ':5_2_internalstorage'
+include ':5_1_sharedpreferences'
 include ':2_9_constraintsets'
 include ':2_8_placeholdersandanimations'
 include ':2_7_barriersandgroups'
