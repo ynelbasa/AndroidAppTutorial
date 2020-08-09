@@ -18,8 +18,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
         public ExampleViewHolder(View itemView) {
             super(itemView);
-            mTextViewLine1 = itemView.findViewById(R.id.line_1);
-            mTextViewLine2 = itemView.findViewById(R.id.line_2);
+            mTextViewLine1 = itemView.findViewById(R.id.textview_line_1);
+            mTextViewLine2 = itemView.findViewById(R.id.textview_line_2);
         }
     }
 
