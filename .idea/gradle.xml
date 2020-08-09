@@ -35,6 +35,7 @@
             <option value="$PROJECT_DIR$/4_4_contextualactionmenu" />
             <option value="$PROJECT_DIR$/4_5_bottomnavigationview" />
             <option value="$PROJECT_DIR$/4_6_navigationdrawer" />
+            <option value="$PROJECT_DIR$/5_1_sharedpreferences" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
