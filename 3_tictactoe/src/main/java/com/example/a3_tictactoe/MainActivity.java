@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         roundCount++;
 
+        // Result
         if (hasWinner()) {
             if (player1Turn) {
                 player1Wins();
