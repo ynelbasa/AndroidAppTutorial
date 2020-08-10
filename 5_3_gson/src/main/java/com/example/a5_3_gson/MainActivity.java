@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         loadData();
         buildRecyclerView();
         setInsertButton();
@@ -89,5 +89,26 @@ public class MainActivity extends AppCompatActivity {
     private void insertItem(String line1, String line2) {
         mExampleList.add(new ExampleItem(line1, line2));
         mAdapter.notifyItemInserted(mExampleList.size());
+    }
+
+    public void clear(View v) {
+
+        int size = mExampleList.size();
+        if (size > 0) {
+
+            // Clear preferences
+            SharedPreferences sharedPreference = getSharedPreferences(sharedPref, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreference.edit();
+            editor.clear();
+            editor.apply();
+
+            // Clear array
+            mExampleList.clear();
+
+            // Clear adapter
+            mAdapter.notifyItemRangeRemoved(0, size);
+
+            Toast.makeText(this, "Data cleared.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/line_1"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/line_1"
         android:text="insert" />
 
@@ -49,4 +49,16 @@
         android:layout_alignBaseline="@id/button_insert"
         android:layout_toEndOf="@+id/button_insert"
         android:text="save" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_insert"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="51dp"
+
+        android:layout_toEndOf="@+id/line_2"
+        android:onClick="clear"
+        android:text="clear" />
 </RelativeLayout>
