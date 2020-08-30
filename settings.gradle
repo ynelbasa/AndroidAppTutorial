@@ -1,3 +1,4 @@
+include ':7_3_mediaplayer'
 include ':7_2_soundpool'
 include ':7_1_videoview'
 include ':6_4_toastposition'
