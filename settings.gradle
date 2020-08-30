@@ -1,3 +1,4 @@
+include ':7_1_videoview'
 include ':6_4_toastposition'
 include ':6_3_toasty'
 include ':6_2_stylabletoast'

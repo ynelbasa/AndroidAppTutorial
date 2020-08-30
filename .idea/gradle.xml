@@ -42,6 +42,7 @@
             <option value="$PROJECT_DIR$/6_2_stylabletoast" />
             <option value="$PROJECT_DIR$/6_3_toasty" />
             <option value="$PROJECT_DIR$/6_4_toastposition" />
+            <option value="$PROJECT_DIR$/7_1_videoview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
