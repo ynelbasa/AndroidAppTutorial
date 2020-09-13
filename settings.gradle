@@ -1,3 +1,4 @@
+include ':8_1_backgroundthread'
 include ':7_3_mediaplayer'
 include ':7_2_soundpool'
 include ':7_1_videoview'

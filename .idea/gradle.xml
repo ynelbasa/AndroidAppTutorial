@@ -45,6 +45,7 @@
             <option value="$PROJECT_DIR$/7_1_videoview" />
             <option value="$PROJECT_DIR$/7_2_soundpool" />
             <option value="$PROJECT_DIR$/7_3_mediaplayer" />
+            <option value="$PROJECT_DIR$/8_1_backgroundthread" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
