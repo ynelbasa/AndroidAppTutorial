@@ -2,8 +2,12 @@ package com.apps.a10_quizapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.apps.a10_quizapp.QuizContract.*;
 
@@ -60,5 +64,29 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION3, question.getOption3());
         cv.put(QuestionsTable.COLUMN_CORRECT_ANSWER, question.getCorrectAnswer());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
+    }
+
+    public List<Question> getAllQuestions() {
+        List<Question> questionList = new ArrayList<>();
+        db = getReadableDatabase();
+
+        // Runs the query
+        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME, null);
+
+        // Move cursor to the first entry
+        if (c.moveToFirst()) {
+            do {
+                Question question = new Question();
+                question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
+                question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
+                question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
+                question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
+                question.setCorrectAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CORRECT_ANSWER)));
+                questionList.add(question);
+            } while (c.moveToNext());
+        }
+
+        c.close();
+        return questionList;
     }
 }
