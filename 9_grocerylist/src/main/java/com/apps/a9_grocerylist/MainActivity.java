@@ -1,6 +1,7 @@
 package com.apps.a9_grocerylist;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +36,21 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new GroceryAdapter(this, getAllItems());
         recyclerView.setAdapter(mAdapter);
+
+        // Delete functionality
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                removeItem((long) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
+
 
         // Get UI elements
         mEditTextName = findViewById(R.id.editText_name);
@@ -97,6 +113,12 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.swapCursor(getAllItems());
 
         mEditTextName.getText().clear();
+    }
+
+    private void removeItem(long id) {
+        mDatabase.delete(GroceryContract.GroceryEntry.TABLE_NAME,
+                GroceryContract.GroceryEntry._ID + "=" + id, null);
+        mAdapter.swapCursor(getAllItems());
     }
 
     // Get all the items from grocery table
