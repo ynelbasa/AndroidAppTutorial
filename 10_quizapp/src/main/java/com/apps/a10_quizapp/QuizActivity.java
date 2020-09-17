@@ -33,6 +33,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewQuestion;
     private TextView textViewScore;
     private TextView textViewQuestionCount;
+    private TextView textViewDifficulty;
     private TextView textViewCountDown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -68,6 +69,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewQuestion = findViewById(R.id.text_view_question);
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
+        textViewDifficulty = findViewById(R.id.text_view_difficulty);
         textViewCountDown = findViewById(R.id.text_view_countdown);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
@@ -79,11 +81,16 @@ public class QuizActivity extends AppCompatActivity {
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
 
+        // Display difficulty
+        Intent intent = getIntent();
+        String difficulty = intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
+        textViewDifficulty.setText("Difficulty: " + difficulty);
+
         // Execute db call only when there is no savedInstanceState
         if (savedInstanceState == null) {
             // Get all questions from the db
             QuizDbHelper dbHelper = new QuizDbHelper(this);
-            questionList = dbHelper.getQuestions(Question.DIFFICULTY_MEDIUM);
+            questionList = dbHelper.getQuestions(difficulty);
             // questionList = dbHelper.getAllQuestions();
             questionCountTotal = questionList.size();
 
