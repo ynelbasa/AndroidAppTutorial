@@ -80,12 +80,26 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Category c2 = new Category("Geography");
         Category c3 = new Category("Math");
 
-        addCategory(c1);
-        addCategory(c2);
-        addCategory(c3);
+        insertCategory(c1);
+        insertCategory(c2);
+        insertCategory(c3);
     }
 
-    private void addCategory(Category category) {
+    // Use this method to add category after db creation
+    public void addCategory(Category category) {
+        db = getWritableDatabase();
+        insertCategory(category);
+    }
+
+    // Use this method to add categories after db creation
+    public void addCategories(List<Category> categories) {
+        db = getWritableDatabase();
+        for (Category category : categories) {
+            insertCategory(category);
+        }
+    }
+
+    private void insertCategory(Category category) {
         ContentValues cv = new ContentValues();
         cv.put(CategoriesTable.COLUMN_NAME, category.getName());
         db.insert(CategoriesTable.TABLE_NAME, null, cv);
@@ -103,14 +117,28 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q5 = new Question("Non existing, Hard: B is correct again", "A", "B",
                 "C", 2, Question.DIFFICULTY_HARD, 4);
 
-        addQuestion(q1);
-        addQuestion(q2);
-        addQuestion(q3);
-        addQuestion(q4);
-        addQuestion(q5);
+        insertQuestion(q1);
+        insertQuestion(q2);
+        insertQuestion(q3);
+        insertQuestion(q4);
+        insertQuestion(q5);
     }
 
-    private void addQuestion(Question question) {
+    // Use this method to add question after db creation
+    public void addQuestion(Question question) {
+        db = getWritableDatabase();
+        insertQuestion(question);
+    }
+
+    // Use this method to add questions after db creation
+    public void addQuestions(List<Question> questions) {
+        db = getWritableDatabase();
+        for (Question question : questions) {
+            insertQuestion(question);
+        }
+    }
+
+    private void insertQuestion(Question question) {
         ContentValues cv = new ContentValues();
         cv.put(QuestionsTable.COLUMN_QUESTION, question.getQuestion());
         cv.put(QuestionsTable.COLUMN_OPTION1, question.getOption1());

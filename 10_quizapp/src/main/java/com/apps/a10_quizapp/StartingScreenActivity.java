@@ -49,6 +49,9 @@ public class StartingScreenActivity extends AppCompatActivity {
                 startQuiz();
             }
         });
+
+        // Sample add category / question
+        // QuizDbHelper.getInstance(this).addQuestion(new Question(){});
     }
 
     @Override
