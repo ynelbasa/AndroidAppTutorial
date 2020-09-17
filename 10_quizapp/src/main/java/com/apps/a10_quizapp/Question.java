@@ -1,6 +1,9 @@
 package com.apps.a10_quizapp;
 
-public class Question {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Question implements Parcelable {
     private String question;
     private String option1;
     private String option2;
@@ -55,7 +58,21 @@ public class Question {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(int answerNr) {
-        this.correctAnswer = answerNr;
+    public void setCorrectAnswer(int correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(question);
+        dest.writeString(option1);
+        dest.writeString(option2);
+        dest.writeString(option3);
+        dest.writeInt(correctAnswer);
     }
 }
