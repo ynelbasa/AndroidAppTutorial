@@ -23,6 +23,12 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
+        final String SQL_CREATE_CATEGORIES_TABLE = "CREATE TABLE " +
+                CategoriesTable.TABLE_NAME + "( " +
+                CategoriesTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                CategoriesTable.COLUMN_NAME + " TEXT " +
+                ")";
+
         final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuestionsTable.TABLE_NAME + " ( " +
                 QuestionsTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -31,29 +37,61 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
                 QuestionsTable.COLUMN_CORRECT_ANSWER + " INTEGER, " +
-                QuestionsTable.COLUMN_DIFFICULTY + " TEXT" +
+                QuestionsTable.COLUMN_DIFFICULTY + " TEXT, " +
+                QuestionsTable.COLUMN_CATEGORY_ID + " INTEGER, " +
+                "FOREIGN KEY(" + QuestionsTable.COLUMN_CATEGORY_ID + ") REFERENCES " +
+                CategoriesTable.TABLE_NAME + "(" + CategoriesTable._ID + ")" + "ON DELETE CASCADE" +
                 ")";
+
+        // Execute create table queries
+        db.execSQL(SQL_CREATE_CATEGORIES_TABLE);
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
+
+        fillCategoriesTable();
         fillQuestionsTable();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + CategoriesTable.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
         onCreate(db);
     }
 
+    @Override
+    // Called on db open
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
+
+    private void fillCategoriesTable() {
+        Category c1 = new Category("Programming");
+        Category c2 = new Category("Geography");
+        Category c3 = new Category("Math");
+
+        addCategory(c1);
+        addCategory(c2);
+        addCategory(c3);
+    }
+
+    private void addCategory(Category category) {
+        ContentValues cv = new ContentValues();
+        cv.put(CategoriesTable.COLUMN_NAME, category.getName());
+        db.insert(CategoriesTable.TABLE_NAME, null, cv);
+    }
+
     private void fillQuestionsTable() {
-        Question q1 = new Question("Easy: A is correct", "A", "B",
-                "C", 1, Question.DIFFICULTY_EASY);
-        Question q2 = new Question("Medium: B is correct", "A", "B",
-                "C", 2, Question.DIFFICULTY_MEDIUM);
-        Question q3 = new Question("Medium: C is correct", "A", "B",
-                "C", 3, Question.DIFFICULTY_MEDIUM);
-        Question q4 = new Question("Hard: A is correct again", "A", "B",
-                "C", 1, Question.DIFFICULTY_HARD);
-        Question q5 = new Question("Hard: B is correct again", "A", "B",
-                "C", 2, Question.DIFFICULTY_HARD);
+        Question q1 = new Question("Programming, Easy: A is correct", "A", "B",
+                "C", 1, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
+        Question q2 = new Question("Geography, Medium: B is correct", "A", "B",
+                "C", 2, Question.DIFFICULTY_MEDIUM, Category.GEOGRAPHY);
+        Question q3 = new Question("Math, Medium: C is correct", "A", "B",
+                "C", 3, Question.DIFFICULTY_MEDIUM, Category.MATH);
+        Question q4 = new Question("Math, Hard: A is correct again", "A", "B",
+                "C", 1, Question.DIFFICULTY_HARD, Category.MATH);
+        Question q5 = new Question("Non existing, Hard: B is correct again", "A", "B",
+                "C", 2, Question.DIFFICULTY_HARD, 4);
 
         addQuestion(q1);
         addQuestion(q2);
@@ -70,6 +108,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION3, question.getOption3());
         cv.put(QuestionsTable.COLUMN_CORRECT_ANSWER, question.getCorrectAnswer());
         cv.put(QuestionsTable.COLUMN_DIFFICULTY, question.getDifficulty());
+        cv.put(QuestionsTable.COLUMN_CATEGORY_ID, question.getCategoryId());
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
 
@@ -84,12 +123,14 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             do {
                 Question question = new Question();
+                question.setId(c.getInt(c.getColumnIndex(QuestionsTable._ID)));
                 question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
                 question.setCorrectAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CORRECT_ANSWER)));
                 question.setDifficulty(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_DIFFICULTY)));
+                question.setCategoryId(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY_ID)));
                 questionList.add(question);
             } while (c.moveToNext());
         }
@@ -111,12 +152,14 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             do {
                 Question question = new Question();
+                question.setId(c.getInt(c.getColumnIndex(QuestionsTable._ID)));
                 question.setQuestion(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_QUESTION)));
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
                 question.setCorrectAnswer(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CORRECT_ANSWER)));
                 question.setDifficulty(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_DIFFICULTY)));
+                question.setCategoryId(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_CATEGORY_ID)));
                 questionList.add(question);
             } while (c.moveToNext());
         }
