@@ -4,7 +4,7 @@ public class Category {
     public static final int PROGRAMMING = 1;
     public static final int GEOGRAPHY = 2;
     public static final int MATH = 3;
-    
+
     private int id;
 
     private String name;
@@ -30,5 +30,12 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    // Handle displaying of category name in the spinner
+    // .toString Creates java class hashcode combination for id and name
+    @Override
+    public String toString() {
+        return getName();
     }
 }

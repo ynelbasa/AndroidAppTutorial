@@ -11,13 +11,23 @@ import java.util.List;
 
 import static com.apps.a10_quizapp.QuizContract.*;
 
+// Singleton to prevent memory leak because of multiple usage in a class, makes sure there is only one instance
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "SampleQuiz.db";
     private static final int DATABASE_VERSION = 1;
+
+    private static QuizDbHelper instance;
     private SQLiteDatabase db;
 
-    public QuizDbHelper(Context context) {
+    private QuizDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    // Synchronized to access db helper from different threads
+    public static synchronized QuizDbHelper getInstance(Context context) {
+        if (instance == null)
+            instance = new QuizDbHelper(context.getApplicationContext());
+        return instance;
     }
 
     @Override
@@ -112,6 +122,22 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
     }
 
+    public List<Category> getAllCategories() {
+        List<Category> categoryList = new ArrayList<>();
+        db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + CategoriesTable.TABLE_NAME, null);
+        if (c.moveToFirst()) {
+            do {
+                Category category = new Category();
+                category.setId(c.getInt(c.getColumnIndex(CategoriesTable._ID)));
+                category.setName(c.getString(c.getColumnIndex(CategoriesTable.COLUMN_NAME)));
+                categoryList.add(category);
+            } while (c.moveToNext());
+        }
+        c.close();
+        return categoryList;
+    }
+
     public ArrayList<Question> getAllQuestions() {
         ArrayList<Question> questionList = new ArrayList<>();
         db = getReadableDatabase();
@@ -139,14 +165,24 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         return questionList;
     }
 
-    public ArrayList<Question> getQuestions(String difficulty) {
+    public ArrayList<Question> getQuestions(int categoryId, String difficulty) {
         ArrayList<Question> questionList = new ArrayList<>();
         db = getReadableDatabase();
 
         // Runs the query
-        String[] selectionArgs = new String[]{difficulty};
-        Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_NAME +
-                " WHERE " + QuestionsTable.COLUMN_DIFFICULTY + " = ?", selectionArgs);
+        String selectionQuery = QuestionsTable.COLUMN_CATEGORY_ID + " = ? " +
+                " AND " + QuestionsTable.COLUMN_DIFFICULTY + " = ? ";
+        String[] selectionArgs = new String[]{String.valueOf(categoryId), difficulty};
+
+        Cursor c = db.query(
+                QuestionsTable.TABLE_NAME,
+                null, // return all columns
+                selectionQuery,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
 
         // Move cursor to the first entry
         if (c.moveToFirst()) {
