@@ -24,6 +24,7 @@ public abstract class NoteDatabase extends RoomDatabase {
                     NoteDatabase.class, "note_database")
                     // tells room to wait for schema changes, avoids illegalStateException during migration
                     .fallbackToDestructiveMigration()
+                    .addCallback(roomCallback)
                     .build();
         }
 
