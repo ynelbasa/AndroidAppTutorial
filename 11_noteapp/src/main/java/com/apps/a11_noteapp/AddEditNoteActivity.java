@@ -74,7 +74,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         int id = getIntent().getIntExtra(EXTRA_ID, -1);
 
         // Put id to intent only when it has value
-        if(id != -1) {
+        if (id != -1) {
             data.putExtra(EXTRA_ID, id);
         }
 
