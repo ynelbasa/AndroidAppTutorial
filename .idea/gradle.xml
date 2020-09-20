@@ -21,6 +21,8 @@
             <option value="$PROJECT_DIR$/12_6_dynamicreceiver" />
             <option value="$PROJECT_DIR$/12_7_broadcastsender" />
             <option value="$PROJECT_DIR$/12_7_custombroadcasts" />
+            <option value="$PROJECT_DIR$/12_8_broadcastsender" />
+            <option value="$PROJECT_DIR$/12_8_explicitbroadcasts" />
             <option value="$PROJECT_DIR$/1_1_openactivity" />
             <option value="$PROJECT_DIR$/1_2_passvariable" />
             <option value="$PROJECT_DIR$/1_3_senddata" />

@@ -1,3 +1,5 @@
+include ':12_8_broadcastsender'
+include ':12_8_explicitbroadcasts'
 include ':12_7_broadcastsender'
 include ':12_7_custombroadcasts'
 include ':12_6_dynamicreceiver'
