@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/12_11_localbroadcastmanager" />
             <option value="$PROJECT_DIR$/12_12_broadcastsender" />
             <option value="$PROJECT_DIR$/12_12_goasyncandpendingresult" />
+            <option value="$PROJECT_DIR$/12_13_alarmmanager" />
             <option value="$PROJECT_DIR$/12_1_jobscheduler" />
             <option value="$PROJECT_DIR$/12_2_foregroundservice" />
             <option value="$PROJECT_DIR$/12_3_intentservice" />
