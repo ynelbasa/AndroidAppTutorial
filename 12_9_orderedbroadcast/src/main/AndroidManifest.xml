@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".OrderedReceiver2">
+            <intent-filter android:priority="2">
+                <action android:name="EXAMPLE_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".OrderedReceiver3">
+            <intent-filter android:priority="3">
+                <action android:name="EXAMPLE_ACTION" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
