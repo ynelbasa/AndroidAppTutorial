@@ -1,3 +1,4 @@
+include ':14_2_firebasestorage'
 include ':14_1_firebasenotification'
 include ':13_4_phonecall'
 include ':13_3_easypermission'
