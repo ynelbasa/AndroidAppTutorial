@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/10_quizapp" />
             <option value="$PROJECT_DIR$/11_noteapp" />
+            <option value="$PROJECT_DIR$/12_10_broadcastpermission" />
+            <option value="$PROJECT_DIR$/12_10_broadcastsender" />
             <option value="$PROJECT_DIR$/12_1_jobscheduler" />
             <option value="$PROJECT_DIR$/12_2_foregroundservice" />
             <option value="$PROJECT_DIR$/12_3_intentservice" />
