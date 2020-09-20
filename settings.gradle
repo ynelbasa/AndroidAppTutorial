@@ -1,3 +1,4 @@
+include ':12_7_broadcastsender'
 include ':12_7_custombroadcasts'
 include ':12_6_dynamicreceiver'
 include ':12_5_staticreceiver'

@@ -14,6 +14,8 @@ public class ExampleBroadcastReceiver extends BroadcastReceiver {
             boolean noConnectivity = intent.getBooleanExtra(
                     ConnectivityManager.EXTRA_NO_CONNECTIVITY, false
             );
+
+
             if (noConnectivity) {
                 Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
             } else {
