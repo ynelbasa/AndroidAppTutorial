@@ -13,6 +13,8 @@ public class ExampleBroadcastReceiver extends BroadcastReceiver {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
             Toast.makeText(context, "Boot completed", Toast.LENGTH_SHORT).show();
         }
+        
+        // Deprecated in v24 and above
         if (ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())) {
             Toast.makeText(context, "Connectivity changed", Toast.LENGTH_SHORT).show();
         }
