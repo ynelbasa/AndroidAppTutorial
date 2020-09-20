@@ -1,4 +1,4 @@
-package com.apps.a12_5_broadcastreceiver;
+package com.apps.a12_5_staticreceiver;
 
 import androidx.appcompat.app.AppCompatActivity;
 

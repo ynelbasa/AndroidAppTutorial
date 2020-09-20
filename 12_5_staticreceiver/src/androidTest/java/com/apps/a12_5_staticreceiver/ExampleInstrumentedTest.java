@@ -1,4 +1,4 @@
-package com.apps.a12_5_broadcastreceiver;
+package com.apps.a12_5_staticreceiver;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.apps.a12_5_broadcastreceiver", appContext.getPackageName());
+        assertEquals("com.apps.a12_5_staticreceiver", appContext.getPackageName());
     }
 }

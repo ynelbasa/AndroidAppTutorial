@@ -1,4 +1,4 @@
-package com.apps.a12_5_broadcastreceiver;
+package com.apps.a12_5_staticreceiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
