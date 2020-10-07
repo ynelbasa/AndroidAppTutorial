@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat;
 import static com.apps.a12_2_foregroundservice.App.CHANNEL_ID;
 
 public class ExampleService extends Service {
-        @Override
+    @Override
     // Called only once during creation
     public void onCreate() {
         super.onCreate();

@@ -34,35 +34,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:564845062325:android:b9810f3c4191aa8c4036fc",
-        "android_client_info": {
-          "package_name": "com.apps.a14_2_firebasestorage"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "564845062325-gblfj1ql56tncn04bl7glll4osv00j4d.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD9qI6gkFcW0uFjHGrpLiFn0S-XLqH6vhg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "564845062325-gblfj1ql56tncn04bl7glll4osv00j4d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
